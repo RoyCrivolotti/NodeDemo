@@ -1,0 +1,45 @@
+{
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true,
+        "jquery": false
+    },
+	"plugins": [
+		"html",
+        "import"
+    ],
+
+    "extends": "airbnb",
+    "rules": {
+        "no-console": "off",
+        "no-unused-vars": ["warn", {
+            "argsIgnorePattern": "res|response|next|err|error|req|request"
+        }],
+        "func-names": ["error", "never"],
+        "no-shadow": "warn",
+        "no-plusplus": "off",
+        "prefer-destructuring": ["warn", {
+            "array": true,
+            "object": true
+        }],
+        "no-eq-null": "warn",
+        "eqeqeq": "warn",
+        "no-use-before-define": "warn",
+        "arrow-parens": [2, "as-needed"],
+        "max-len": ["warn", { "code": 100, "ignoreComments": true }],
+        "brace-style": ["warn", "1tbs", {
+            "allowSingleLine": true
+        }],
+        "comma-dangle": ["error", "always-multiline"],
+        "indent": ["error", "tab"],
+        "no-tabs": ["error", { "allowIndentationTabs": true }],
+        "padding-line-between-statements": ["error", { "blankLine": "any", "prev": "cjs-import", "next": "*" }],
+        "object-curly-newline": ["warn", {
+            "ImportDeclaration": { "multiline": true },
+            "ExportDeclaration": { "multiline": true }
+        }],
+		"no-unused-expressions": [ "error", { "allowTernary": true }],
+        "no-param-reassign": "warn"
+    }
+}

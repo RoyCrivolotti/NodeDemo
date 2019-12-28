@@ -1,0 +1,11 @@
+extends layout
+
+block content
+		h1 Hello World!
+		.data
+			h2
+				| &nbsp; &nbsp; My name is #{name}. 
+			h3
+				| &nbsp; &nbsp; &nbsp; &nbsp; The date is #{helpers.moment().format('DD-MM-YYYY')},
+				br
+				| &nbsp; &nbsp; &nbsp; &nbsp; and the time is #{helpers.moment().format('HH:mm')}
