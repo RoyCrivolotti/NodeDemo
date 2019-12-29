@@ -5,6 +5,7 @@ const MongoStore = require('connect-mongo')(session);
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const logger = require('morgan');
 const passport = require('passport');
 const promisify = require('es6-promisify');
 const flash = require('connect-flash');
@@ -17,6 +18,16 @@ const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
 
 const app = express();
+
+// log only 4xx and 5xx responses to console
+app.use(logger('dev', {
+	skip: (req, res) => res.statusCode < 400,
+}));
+
+// log all requests to access.log
+app.use(logger('common', {
+	stream: fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' }),
+}));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
