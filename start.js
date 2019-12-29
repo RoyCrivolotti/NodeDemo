@@ -9,11 +9,9 @@ const app = require('./app');
 
 // connect to the DB
 mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 mongoose.connection.on('error', error => {
 	console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${error.message}`);
 });
-
 
 app.set('port', process.env.PORT || 7777);
 
