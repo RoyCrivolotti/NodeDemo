@@ -6,6 +6,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
+const fs = require('fs');
 const passport = require('passport');
 const promisify = require('es6-promisify');
 const flash = require('connect-flash');
