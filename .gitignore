@@ -1,5 +1,10 @@
 /node_modules
 
+# environment variables
 .env
 
+# webpack build files
 /public/dist
+
+# debugging log files
+*.log
